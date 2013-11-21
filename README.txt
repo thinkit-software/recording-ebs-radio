@@ -1,6 +1,11 @@
 recording-ebs-radio
 ===================
 
+usage: ./rec_ebs_radio.sh [program_name] [recording_time(min)] [target_dir]
+
+If you place the the [program_name].jpg file in artwork directory,
+this file will be used as an album cover image.
+
 Recording EBS radio broadcast
 
 Motivated by
