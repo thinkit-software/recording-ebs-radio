@@ -1,0 +1,20 @@
+(*
+move files to itunes
+*)
+
+on adding folder items to my_folder after receiving the_files
+	repeat with i from 1 to number of items in the_files
+		tell application "iTunes"
+			launch
+			try
+				set this_file to (item i of the_files)
+				
+				add this_file
+				
+				set the file_path to the quoted form of the POSIX path of this_file
+				do shell script ("rm -f " & file_path)
+				
+			end try
+		end tell
+	end repeat
+end adding folder items to
