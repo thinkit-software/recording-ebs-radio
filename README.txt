@@ -32,3 +32,4 @@ crontab example:
 Tip1: it was very convinient when I save the new recording files into the Dropbox folder.
 
 Tip2: for OS X Users, folder action script to add files into iTunes can save your time
+https://github.com/dongchon/recording-ebs-radio/blob/master/OS-X-folder-action-example
