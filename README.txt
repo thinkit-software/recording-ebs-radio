@@ -3,8 +3,8 @@ recording-ebs-radio
 
 usage: ./rec_ebs_radio.sh [program_name] [recording_time(min)] [target_dir]
 
-If you place the the [program_name].jpg file in artwork directory,
-this file will be used as an album cover image.
+If you place the the [program_name].jpg file in the artwork directory,
+the image file will be embedded as an album cover image.
 
 Recording EBS radio broadcast
 
@@ -28,3 +28,7 @@ crontab example:
 40 7 * * 1-6 ~/bin/rec_ebs_radio.sh PowerEnglish 20 ~/Dropbox/EBS-Radio
 00 8 * * 1-6 ~/bin/rec_ebs_radio.sh 모닝스페셜 110 ~/Dropbox/EBS-Radio
 50 9 * * 1-6 ~/bin/rec_ebs_radio.sh EBSWorldNews 10 ~/Dropbox/EBS-Radio
+
+Tip1: it was very convinient when I save the new recording files into the Dropbox folder.
+
+Tip2: for OS X Users, folder action script to add files into iTunes can save your time
