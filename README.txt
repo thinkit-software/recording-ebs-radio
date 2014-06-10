@@ -15,12 +15,10 @@ Motivated by
 Initial reference: 
 [3] http://xucxo.blogspot.ca/2010/08/ebs-lame-mp3gain-mplayer.html
 
-Tested only on Ubuntu Linux
+Tested only on Ubuntu Linux in 2013
 
-Required Program: rtmpdump, ffmpeg, eyeD3
-sudo apt-get install rtmpdump ffmpeg eyeD3
-
-
+Required packages: rtmpdump, ffmpeg, eyeD3 (following command might work well)
+ sudo apt-get install rtmpdump ffmpeg eyeD3
 
 crontab example:
 20 6 * * 1-6 ~/bin/rec_ebs_radio.sh EasyWriting 20 ~/Dropbox/EBS-Radio
