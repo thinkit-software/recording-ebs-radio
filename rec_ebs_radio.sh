@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BASEDIR=$(dirname $0)
-RADIO_ADDR="rtmp://ebsandroid.nefficient.com/fmradiofamilypc/familypc1m"
+RADIO_ADDR="rtmp://ebsandroid.ebs.co.kr:1935/fmradiofamilypc/familypc1m"
 RADIO_NAME="EBS"
 TIME_OFFSET="5s"
 ALBUMARTDIR=$BASEDIR/artwork
@@ -14,10 +14,11 @@ if [ $# -lt 3 ]
 fi
 
 RTMPDUMP_BIN=rtmpdump
-FFMPEG_BIN=ffmpeg
-EYED3_BIN=eyeD3
+FLV2MP3_BIN=avconv
+ID3TAG_BIN=eyeD3
+LIDAVCODEC=libavcodec-extra-53
 
-DEPENDENT_PROGRAMS="$RTMPDUMP_BIN $FFMPEG_BIN $EYED3_BIN"
+DEPENDENT_PROGRAMS="$RTMPDUMP_BIN $FLV2MP3_BIN $ID3TAG_BIN $LIDAVCODEC"
 
 for PROG in $DEPENDENT_PROGRAMS
 do
@@ -52,9 +53,9 @@ MP3_FILE_NAME=$DATE"-"$PROGRAM_NAME.mp3
 sleep $TIME_OFFSET
 $RTMPDUMP_BIN -q -r $RADIO_ADDR -B $RECORD_SECS -o $TEMP_FLV
 sleep 1
-$FFMPEG_BIN -i $TEMP_FLV -ar 44100 $MP3_FILE_NAME
+$FLV2MP3_BIN -i $TEMP_FLV -ar 44100 $MP3_FILE_NAME
 sleep 1
-$EYED3_BIN --to-v2.4    \
+$ID3TAG_BIN --to-v2.4    \
     --set-encoding=utf8     \
     -t "$ID3_TITLE"         \
     -a "$ID3_ARTIST"        \
@@ -65,7 +66,7 @@ $EYED3_BIN --to-v2.4    \
     $MP3_FILE_NAME
 
 if [ -e "$ID3_ALBUMART" ] ; then
-  $EYED3_BIN --to-v2.4 \
+  $ID3TAG_BIN --to-v2.4 \
   --add-image="$ID3_ALBUMART":FRONT_COVER \
   $MP3_FILE_NAME
 fi

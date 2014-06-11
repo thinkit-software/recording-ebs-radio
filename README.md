@@ -8,9 +8,9 @@ RTMP streaming radio to MP3 file
 
 ## Installation
 
-Tested only on Ubuntu Linux in 2013. Required packages are rtmpdump, ffmpeg, eyeD3. The following command might work well. :)
+Tested only on Ubuntu Linux in 2013. Required packages are rtmpdump, avconv, eyeD3. The following command might work well. :)
 ```shell
-sudo apt-get install rtmpdump ffmpeg eyeD3
+sudo apt-get install rtmpdump avconv eyeD3 libavcodec-extra-53
 ```
 
 ## Usage Tips
@@ -50,3 +50,7 @@ command matches to the artwork image file, [artwork/PowerEnglish.jpg](https://gi
 1. https://kldp.org/node/95974?page=1
 2. https://code.google.com/p/ebs-radio/
 3. http://xucxo.blogspot.ca/2010/08/ebs-lame-mp3gain-mplayer.html (initial source code reference)
+
+## Acknowledgement
+* Updated URL: Youngsuk Lee http://dnlab.blogspot.ca/2013/01/ebs-mp3-dropbox.html
+* Package Requirement: http://chwe.org/wiki/EBS
