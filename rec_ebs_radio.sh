@@ -16,17 +16,6 @@ fi
 RTMPDUMP_BIN=rtmpdump
 FLV2MP3_BIN=avconv
 ID3TAG_BIN=eyeD3
-LIDAVCODEC=libavcodec-extra-53
-
-DEPENDENT_PROGRAMS="$RTMPDUMP_BIN $FLV2MP3_BIN $ID3TAG_BIN $LIDAVCODEC"
-
-for PROG in $DEPENDENT_PROGRAMS
-do
-  if [ "`which $PROG`" == "" ] ; then
-    echo "ERROR: $PROG is required to run this script."
-    exit 1
-  fi
-done
 
 PROGRAM_NAME=$1
 RECORD_MINS=$2
