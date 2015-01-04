@@ -10,7 +10,8 @@ RTMP streaming radio to MP3 file
 
 Tested only on Ubuntu Linux in 2013. Required packages are rtmpdump, avconv, eyeD3. The following command might work well. :)
 ```shell
-sudo apt-get install rtmpdump avconv eyeD3 libav-tools libavcodec-extra-53
+sudo apt-get install rtmpdump avconv libav-tools libavcodec-extra-53
+sudo pip install eyeD3 # version 0.7.5 or above
 ```
 
 ## Usage Tips
