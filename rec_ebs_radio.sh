@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BASEDIR=$(dirname $0)
-RADIO_ADDR="rtmp://ebsandroid.ebs.co.kr:1935/fmradiofamilypc/familypc1m"
+RADIO_ADDR="rtsp://new_iradio.ebs.co.kr/iradio/iradiolive_m4a"
 RADIO_NAME="EBS"
 TIME_OFFSET="5s"
 ALBUMARTDIR=$BASEDIR/artwork
